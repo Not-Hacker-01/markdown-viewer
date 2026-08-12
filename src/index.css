@@ -1,0 +1,70 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* Consistent, visible keyboard focus ring app-wide (mouse users unaffected). */
+:focus-visible {
+  outline: 2px solid var(--color-indigo-600);
+  outline-offset: 2px;
+}
+
+/* Brand-tinted prose links/quotes instead of the plugin's grayscale default. */
+.prose {
+  --tw-prose-links: var(--color-indigo-600);
+  --tw-prose-quotes: var(--color-slate-600);
+  --tw-prose-quote-borders: var(--color-indigo-200);
+}
+
+.prose a {
+  text-decoration-color: var(--color-indigo-300);
+}
+
+/* GFM task-list items: the checkbox already acts as the marker, so drop the bullet. */
+.prose li:has(> input[type='checkbox']) {
+  list-style: none;
+  margin-inline-start: -1.5em;
+}
+
+/* Minimal syntax color mapping for rehype-highlight's classNames inside code blocks. */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal {
+  color: var(--color-sky-400);
+}
+.hljs-string,
+.hljs-attr {
+  color: var(--color-emerald-400);
+}
+.hljs-comment,
+.hljs-quote {
+  color: var(--color-slate-400);
+  font-style: italic;
+}
+.hljs-number,
+.hljs-symbol {
+  color: var(--color-amber-300);
+}
+.hljs-title,
+.hljs-section {
+  color: var(--color-violet-300);
+}
+.hljs-built_in,
+.hljs-type {
+  color: var(--color-cyan-300);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
