@@ -2,8 +2,8 @@
 
 A small, production-minded web app that renders an uploaded Markdown file as a clean, readable document, entirely in the browser.
 
-**Live app:** _add deployed URL here_
-**Repo:** _add GitHub URL here_
+**Live app:** https://assignment-rho-puce-76.vercel.app
+**Repo:** https://github.com/Not-Hacker-01/markdown-viewer
 
 ## Project overview
 
